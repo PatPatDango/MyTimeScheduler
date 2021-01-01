@@ -11,4 +11,10 @@ package Classes;
  */
 public class Appointment {
     
+//check every textfield if NULL
+    // if not then -> send message 
+    
+// set new appointment object appointment 
+
+    
 }
