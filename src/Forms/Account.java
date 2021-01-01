@@ -57,6 +57,11 @@ public class Account extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(137, 196, 244));
 
         jButton3.setText("back");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -238,6 +243,12 @@ public class Account extends javax.swing.JFrame {
     private void new_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_new_emailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_new_emailActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    Calendar Calendar = new Calendar();
+    Calendar.setVisible(true);
+    this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

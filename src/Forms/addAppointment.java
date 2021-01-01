@@ -80,6 +80,11 @@ public class addAppointment extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(137, 196, 244));
 
         event_cancel.setText("cancel");
+        event_cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                event_cancelActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("+ add");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -205,9 +210,9 @@ public class addAppointment extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(event_location, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(event_participants, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(event_participants, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(event_location, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -241,6 +246,12 @@ public class addAppointment extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void event_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_event_cancelActionPerformed
+    Calendar Calendar = new Calendar();
+    Calendar.setVisible(true);
+    this.dispose();// TODO add your handling code here:
+    }//GEN-LAST:event_event_cancelActionPerformed
 
     /**
      * @param args the command line arguments

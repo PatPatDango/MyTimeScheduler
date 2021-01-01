@@ -46,6 +46,11 @@ public class Calendar extends javax.swing.JFrame {
         jLabel1.setText("MyTimeScheduler");
 
         my_account.setText("my account ");
+        my_account.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                my_accountActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -146,7 +151,15 @@ public class Calendar extends javax.swing.JFrame {
         // TODO add your handling code here:
         addAppointment addAppointment = new addAppointment();
         addAppointment.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_add_appointmentActionPerformed
+
+    private void my_accountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_my_accountActionPerformed
+        // TODO add your handling code here:
+    Account Account = new Account();
+    Account.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_my_accountActionPerformed
 
     /**
      * @param args the command line arguments
