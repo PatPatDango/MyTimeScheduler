@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Forms;
+import Exceptions.appointment;
 
 /**
  *
@@ -245,6 +246,8 @@ public class addAppointment extends javax.swing.JFrame {
 
     private void add_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_buttonActionPerformed
         // TODO add your handling code here:
+        String location = event_location.getText(); 
+        exception_location();
     }//GEN-LAST:event_add_buttonActionPerformed
 
     private void event_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_event_cancelActionPerformed

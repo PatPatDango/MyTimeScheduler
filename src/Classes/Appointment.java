@@ -42,7 +42,7 @@ public class Appointment
     public void setPriority(String _priority) {priority=_priority;}
     public void setReminder(int _reminder) {reminder=_reminder;}
     
-    public static void main(String args[])
+/*    public static void main(String args[])
     {
         add_button.addActionListener(new ActionListener()
         {
@@ -62,3 +62,18 @@ public class Appointment
         });
     }
 }
+*/
+// Idee zum programmieren 
+    
+public static void main (String args []){
+    
+   
+    
+}
+
+
+
+
+
+
+
