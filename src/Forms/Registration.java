@@ -58,6 +58,7 @@ public class Registration extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(228, 241, 254));
 
+        jLabel_Registration_Reg.setBackground(new java.awt.Color(137, 196, 244));
         jLabel_Registration_Reg.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel_Registration_Reg.setText("Registration");
 
@@ -103,7 +104,7 @@ public class Registration extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel2.setBackground(new java.awt.Color(231, 246, 255));
 
         jTextField_Firstname.setBackground(new java.awt.Color(153, 153, 153));
         jTextField_Firstname.addActionListener(new java.awt.event.ActionListener() {
