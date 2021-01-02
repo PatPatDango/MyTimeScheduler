@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 package Classes;
+import Forms.addAppointment;
 
 /**
  *
- * @author joshu
+ * @author camilla , pat
  */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -49,13 +50,13 @@ public class Appointment
             public void actionPerformed(ActionEvent e)
             {
                 Appointment appointment = new Appointment();
-                appointment.setName(eventname.getText());
-                appointment.setDate(eventdate.getText());
-                appointment.setDuration(eventsduration.getText());
-                appointment.setLocation(eventlocation.getText());
-                appointment.setParticipants(eventparticipants.getText());
+                appointment.setName(event_name.getText());
+                appointment.setDate(event_date.getText());
+                appointment.setDuration(event_duration.getText());
+                appointment.setLocation(event_location.getText());
+                appointment.setParticipants(event_participants.getText());
                 appointment.setAttachementfiles(~~.getText());
-                appointment.setPriority(eventpriority.getText());
+                appointment.setPriority(event_priority.getText());
                 appointment.setReminder(~~.getText());
             }
         });

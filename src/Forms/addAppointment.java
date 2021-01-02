@@ -32,7 +32,7 @@ public class addAppointment extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         event_cancel = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        add_button = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         event_name = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -86,10 +86,10 @@ public class addAppointment extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("+ add");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        add_button.setText("+ add");
+        add_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                add_buttonActionPerformed(evt);
             }
         });
 
@@ -101,7 +101,7 @@ public class addAppointment extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(event_cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(add_button)
                 .addGap(24, 24, 24))
         );
         jPanel3Layout.setVerticalGroup(
@@ -110,7 +110,7 @@ public class addAppointment extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(event_cancel)
-                    .addComponent(jButton1))
+                    .addComponent(add_button))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
@@ -243,9 +243,9 @@ public class addAppointment extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_event_locationActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void add_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_buttonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_add_buttonActionPerformed
 
     private void event_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_event_cancelActionPerformed
     Calendar Calendar = new Calendar();
@@ -289,6 +289,7 @@ public class addAppointment extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton add_button;
     private javax.swing.JButton event_cancel;
     private javax.swing.JFormattedTextField event_date;
     private javax.swing.JFormattedTextField event_duration;
@@ -298,7 +299,6 @@ public class addAppointment extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> event_priority;
     private javax.swing.JComboBox<String> event_reminder;
     private javax.swing.JFormattedTextField event_time;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
