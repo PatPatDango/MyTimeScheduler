@@ -5,13 +5,6 @@
  */
 package Forms;
 
-
-
-import java.awt.Color;
-import static java.awt.Color.black;
-import javax.swing.border.Border;
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 /**
@@ -19,25 +12,12 @@ import javax.swing.JFrame;
  * @author Julia
  */
 public class Login extends javax.swing.JFrame {
-    
 
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
-        
-        //center the Form
-        this.setLocationRelativeTo(null);
-        
-        //create a black border for the close and minimize symbols
-        Border label_border = BorderFactory.createMatteBorder(1,1,1,1, Color.black);
-        jLabel_hideScreen_Log.setBorder(label_border);
-        jLabel_Exit_Log.setBorder(label_border);
-        
-         Border field_border = BorderFactory.createMatteBorder(1,1,1,1, Color.black);
-        jTextField_Username_Log.setBorder(field_border);
-        jPasswordField_Password_Log.setBorder(field_border);
     }
 
     /**
@@ -77,12 +57,6 @@ public class Login extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel_hideScreen_LogMouseClicked(evt);
             }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel_hideScreen_LogMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel_hideScreen_LogMouseExited(evt);
-            }
         });
 
         jLabel_Exit_Log.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -91,12 +65,6 @@ public class Login extends javax.swing.JFrame {
         jLabel_Exit_Log.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel_Exit_LogMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel_Exit_LogMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel_Exit_LogMouseExited(evt);
             }
         });
 
@@ -135,21 +103,10 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jButton_Login_Log.setBackground(new java.awt.Color(51, 255, 0));
+        jButton_Login_Log.setBackground(new java.awt.Color(51, 255, 51));
         jButton_Login_Log.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton_Login_Log.setText("Login");
         jButton_Login_Log.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton_Login_Log.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton_Login_LogMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jButton_Login_LogMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jButton_Login_LogMouseExited(evt);
-            }
-        });
 
         jLabel_LogToRegistration_Log.setText("click here to create a new account");
         jLabel_LogToRegistration_Log.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -167,31 +124,14 @@ public class Login extends javax.swing.JFrame {
         jLabel_Password_Log.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Password_Log.setText("Password:");
 
-        jTextField_Username_Log.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jTextField_Username_Log.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        jTextField_Username_Log.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextField_Username_LogFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextField_Username_LogFocusLost(evt);
-            }
-        });
+        jTextField_Username_Log.setBackground(new java.awt.Color(153, 153, 153));
         jTextField_Username_Log.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField_Username_LogActionPerformed(evt);
             }
         });
 
-        jPasswordField_Password_Log.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPasswordField_Password_Log.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jPasswordField_Password_LogFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jPasswordField_Password_LogFocusLost(evt);
-            }
-        });
+        jPasswordField_Password_Log.setBackground(new java.awt.Color(153, 153, 153));
         jPasswordField_Password_Log.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordField_Password_LogActionPerformed(evt);
@@ -213,10 +153,10 @@ public class Login extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel_Username_Log)
                             .addComponent(jLabel_Password_Log))
-                        .addGap(100, 100, 100)
+                        .addGap(145, 145, 145)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPasswordField_Password_Log, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
-                            .addComponent(jTextField_Username_Log))))
+                            .addComponent(jTextField_Username_Log)
+                            .addComponent(jPasswordField_Password_Log, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))))
                 .addContainerGap(18, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -234,7 +174,7 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel_Password_Log)
                     .addComponent(jPasswordField_Password_Log, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton_Cancel_Log)
                     .addComponent(jButton_Login_Log, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -266,122 +206,33 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField_Username_LogActionPerformed
 
     private void jPasswordField_Password_LogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField_Password_LogActionPerformed
-        
+        // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField_Password_LogActionPerformed
 
     private void jButton_Cancel_LogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Cancel_LogActionPerformed
-         System.exit(0); //close the Login window
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton_Cancel_LogActionPerformed
 
     private void jLabel_hideScreen_LogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_hideScreen_LogMouseClicked
-        
+        // TODO add your handling code here:
          this.setState(JFrame.ICONIFIED);  // minimize the Login screen
     }//GEN-LAST:event_jLabel_hideScreen_LogMouseClicked
 
     private void jLabel_Exit_LogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_Exit_LogMouseClicked
-       
+        // TODO add your handling code here:
         System.exit(0); //close the Login window
     }//GEN-LAST:event_jLabel_Exit_LogMouseClicked
 
     private void jLabel_LogToRegistration_LogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_LogToRegistration_LogMouseClicked
-
-        
-        
-    }//GEN-LAST:event_jLabel_LogToRegistration_LogMouseClicked
-
-    private void jTextField_Username_LogFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField_Username_LogFocusGained
-        // clear the textfiled on focus  if the text is "username"
-          
-        if(jTextField_Username_Log.getText().trim().toLowerCase().equals("username"))
-    {
-        jTextField_Username_Log.setText("");
-        jTextField_Username_Log.setForeground(Color.black);
-    }         
-    }//GEN-LAST:event_jTextField_Username_LogFocusGained
-
-    private void jTextField_Username_LogFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField_Username_LogFocusLost
-        //if the textfield is equal or empty
-        //we will set "username" text in the field
-        //on focus lost event
-        if(jTextField_Username_Log.getText().trim().equals("")  || 
-           jTextField_Username_Log.getText().trim().toLowerCase().equals("username"))
-        {
-            jTextField_Username_Log.setText("username");
-            jTextField_Username_Log.setForeground(new Color(153,153,153));
-        }
-        
-        //remove the border from user field
-       jTextField_Username_Log.setBorder(null);
-    }//GEN-LAST:event_jTextField_Username_LogFocusLost
-
-    private void jLabel_hideScreen_LogMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_hideScreen_LogMouseEntered
-        Border label_border = BorderFactory.createMatteBorder(1,1,1,1, Color.white);
-        jLabel_hideScreen_Log.setBorder(label_border);
-        jLabel_hideScreen_Log.setForeground(Color.white);
-    }//GEN-LAST:event_jLabel_hideScreen_LogMouseEntered
-
-    private void jLabel_hideScreen_LogMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_hideScreen_LogMouseExited
-        Border label_border = BorderFactory.createMatteBorder(1,1,1,1, Color.black);
-        jLabel_hideScreen_Log.setBorder(label_border); 
-        jLabel_hideScreen_Log.setForeground(Color.black);
-    }//GEN-LAST:event_jLabel_hideScreen_LogMouseExited
-
-    private void jLabel_Exit_LogMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_Exit_LogMouseEntered
-        Border label_border = BorderFactory.createMatteBorder(1,1,1,1, Color.white);
-        jLabel_Exit_Log.setBorder(label_border);
-        jLabel_Exit_Log.setForeground(Color.white);
-    }//GEN-LAST:event_jLabel_Exit_LogMouseEntered
-
-    private void jLabel_Exit_LogMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_Exit_LogMouseExited
-        Border label_border = BorderFactory.createMatteBorder(1,1,1,1, Color.black);
-        jLabel_Exit_Log.setBorder(label_border); 
-        jLabel_Exit_Log.setForeground(Color.black);
-    }//GEN-LAST:event_jLabel_Exit_LogMouseExited
-
-    private void jPasswordField_Password_LogFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField_Password_LogFocusGained
-       //clear the password field on focus if the text is password
-       
-       //get the password text
-       String pass_log = String.valueOf(jPasswordField_Password_Log.getPassword());
-       
-       if(pass_log.trim().toLowerCase().equals("password"))
-               {
-                   jPasswordField_Password_Log.setText("");
-                   jPasswordField_Password_Log.setForeground(black);
-               }
-    }//GEN-LAST:event_jPasswordField_Password_LogFocusGained
-
-    private void jPasswordField_Password_LogFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField_Password_LogFocusLost
-      String pass_log = String.valueOf(jPasswordField_Password_Log.getPassword());
-        if(pass_log .trim().equals("")  || 
-           pass_log .trim().toLowerCase().equals("password"))
-        {
-            jPasswordField_Password_Log .setText("password");
-            jTextField_Username_Log.setForeground(new Color(153,153,153));
-        }
-        
-        //remove the border from user field
-       jTextField_Username_Log.setBorder(null);
-                            
-    }//GEN-LAST:event_jPasswordField_Password_LogFocusLost
-
-    private void jButton_Login_LogMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_Login_LogMouseEntered
-       //set button backround
-        jButton_Login_Log.setBackground(Color.white);
-    }//GEN-LAST:event_jButton_Login_LogMouseEntered
-
-    private void jButton_Login_LogMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_Login_LogMouseExited
-        jButton_Login_Log.setBackground(Color.green);
-    }//GEN-LAST:event_jButton_Login_LogMouseExited
-
-    private void jButton_Login_LogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_Login_LogMouseClicked
         Registration rg = new Registration();
         rg.setVisible(true);
         rg.pack();
         rg.setLocationRelativeTo(null);
         rg.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
-    }//GEN-LAST:event_jButton_Login_LogMouseClicked
+        
+        
+    }//GEN-LAST:event_jLabel_LogToRegistration_LogMouseClicked
 
     /**
      * @param args the command line arguments
@@ -417,9 +268,6 @@ public class Login extends javax.swing.JFrame {
             }
         });
     }
-
-        
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_Cancel_Log;
