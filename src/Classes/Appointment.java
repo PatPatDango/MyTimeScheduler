@@ -8,68 +8,65 @@ import Forms.addAppointment;
 
 /**
  *
- * @author camilla , pat
+ * @author camilla , patricia
  */
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
 import java.util.Date;
+
+
+
 public class Appointment 
 {
-    private String name;
-    private Date date;
-    private String location;
-    private String duration;
-    private String participants;
-    private String attachementfiles;
-    private String priority;
-    private int reminder;
+    private String name = null;
+    private LocalDate date = null;
+    private String location = null;
+    private String duration = null;
+    private String participants = null;
+    //private String attachementfiles;
+    private String priority = null;
+    private String reminder = null;
+
+    //Konstructor 
+    public Appointment (String name, LocalDate date, String duration,  String Participants, String priority, String reminder ){
+        this.setName(name);
+        this.setDate(date);
+        this.setLocation(location);
+        this.setDuration(duration);
+        this.setParticipants(participants);
+        this.setPriority(priority); 
+        this.setReminder(reminder); 
+    }
+    
+    
+    //methods 
     
     public String getName() {return name;}
-    public Date getDate() {return date;}
-    public String getDuration() {return duration;}
-    public String getLocation() {return location;}
-    public String getParticipants() {return participants;}
-    public String getAttachmentfiles() {return attachementfiles;}
-    public String getPriority() {return priority;}
-    public int getReminder() {return reminder;}
-    
     public void setName(String _name) {name=_name;}
-    public void setDate(Date _date) {date=_date;}
+    
+    public LocalDate getDate() {return date;}
+    public void setDate(LocalDate _date) {date=_date;}
+    
+    public String getDuration() {return duration;}
     public void setDuration(String _duration) {duration=_duration;}
+    
+    public String getLocation() {return location;}
     public void setLocation(String _location) {location=_location;}
+    
+    public String getParticipants() {return participants;}
     public void setParticipants(String _participants) {participants=_participants;}
-    public void setAttachementfiles(String _attachementfiles) {attachementfiles=_attachementfiles;}
+    
+/*    public String getAttachmentfiles() {return attachementfiles;}
+    public void setAttachementfiles(String _attachementfiles) {attachementfiles=_attachementfiles;} */
+    
+    public String getPriority() {return priority;}
     public void setPriority(String _priority) {priority=_priority;}
-    public void setReminder(int _reminder) {reminder=_reminder;}
-    
-/*    public static void main(String args[])
-    {
-        add_button.addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent e)
-            {
-                Appointment appointment = new Appointment();
-                appointment.setName(event_name.getText());
-                appointment.setDate(event_date.getText());
-                appointment.setDuration(event_duration.getText());
-                appointment.setLocation(event_location.getText());
-                appointment.setParticipants(event_participants.getText());
-                appointment.setAttachementfiles(~~.getText());
-                appointment.setPriority(event_priority.getText());
-                appointment.setReminder(~~.getText());
-            }
-        });
-    }
+
+    public String getReminder() {return reminder;}
+    public void setReminder(String _reminder) {reminder=_reminder;}
 }
-*/
-// Idee zum programmieren 
     
-public static void main (String args []){
-    
-   
-    
-}
 
 
 

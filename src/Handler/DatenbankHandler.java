@@ -16,8 +16,8 @@ public class DatenbankHandler {
     private static PreparedStatement st; 
     
     public static Connection getConnection()throws SQLException {
-        final String USERNAME = "root";
-        final String PASSWORD = "root"; //"abc123";
+        final String USERNAME = "Admin";
+        final String PASSWORD = "admin"; //"abc123";
         String URL = "jdc:mysql://127.0.0.1:3306/MyTimeScheduler";
         Connection con = null;
         

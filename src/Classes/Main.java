@@ -7,7 +7,7 @@ package Classes;
 import Forms.Calendar;
 /**
  *
- * @author joshu
+ * @author patricia
  */
 public class Main {
 

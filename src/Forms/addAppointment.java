@@ -4,11 +4,13 @@
  * and open the template in the editor.
  */
 package Forms;
+import Classes.Appointment;
 import Exceptions.appointment;
+import java.time.LocalDate;
 
 /**
  *
- * @author joshu
+ * @author patricia
  */
 public class addAppointment extends javax.swing.JFrame {
 
@@ -246,8 +248,15 @@ public class addAppointment extends javax.swing.JFrame {
 
     private void add_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_buttonActionPerformed
         // TODO add your handling code here:
-        String location = event_location.getText(); 
-        exception_location();
+          String name = event_name.getText();
+    LocalDate date = LocalDate.parse(event_date.getText());
+    String location = event_location.getText();
+    String duration = event_duration.getText();
+    String participants = event_participants.getText();
+    String priority= event_priority.getSelectedItem().toString();
+    String reminder = event_reminder.getSelectedItem().toString();
+    
+    Appointment new_event = new (name, date ,location, duration, participants, priority, reminder); 
     }//GEN-LAST:event_add_buttonActionPerformed
 
     private void event_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_event_cancelActionPerformed
