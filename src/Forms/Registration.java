@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package Forms;
+import Classes.User;
+import Exceptions.User;
 
 import javax.swing.JFrame;
 
@@ -13,6 +15,7 @@ import javax.swing.JFrame;
  */
 public class Registration extends javax.swing.JFrame {
 
+    
     /**
      * Creates new form Registration
      */
@@ -47,16 +50,17 @@ public class Registration extends javax.swing.JFrame {
         jLabel_Password_Reg = new javax.swing.JLabel();
         jLabel_PasswordConfirmation_Reg = new javax.swing.JLabel();
         jPasswordField_EmailConfirmation = new javax.swing.JPasswordField();
-        jPasswordField_PasswordConfirmation = new javax.swing.JPasswordField();
-        jButton_Cancel_Reg = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
         jButton_Registrate_Reg = new javax.swing.JButton();
+        jButton_Cancel_Reg = new javax.swing.JButton();
         jLabelChangeToLogIn = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(228, 241, 254));
+        jPanel1.setBackground(new java.awt.Color(137, 196, 244));
 
         jLabel_Registration_Reg.setBackground(new java.awt.Color(137, 196, 244));
         jLabel_Registration_Reg.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -115,20 +119,17 @@ public class Registration extends javax.swing.JFrame {
 
         jTextField_Lastname.setBackground(new java.awt.Color(153, 153, 153));
 
+        jLabel_Firstname_Reg.setBackground(new java.awt.Color(0, 0, 0));
         jLabel_Firstname_Reg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel_Firstname_Reg.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Firstname_Reg.setText("Firstname:");
 
         jLabel_Lastname_Reg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel_Lastname_Reg.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Lastname_Reg.setText("Lastname:");
 
         jLabel_Username_Reg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel_Username_Reg.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Username_Reg.setText("Username:");
 
         jLabel_Email_Reg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel_Email_Reg.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Email_Reg.setText("Email:");
 
         jTextField_Username.setBackground(new java.awt.Color(153, 153, 153));
@@ -136,28 +137,30 @@ public class Registration extends javax.swing.JFrame {
         jTextField_Email.setBackground(new java.awt.Color(153, 153, 153));
 
         jLabel_EmailConfirmation_Reg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel_EmailConfirmation_Reg.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_EmailConfirmation_Reg.setText("Email Confirmation:");
 
         jLabel_Password_Reg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel_Password_Reg.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Password_Reg.setText("Password:");
 
         jLabel_PasswordConfirmation_Reg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel_PasswordConfirmation_Reg.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_PasswordConfirmation_Reg.setText("Password Confirmation:");
 
         jPasswordField_EmailConfirmation.setBackground(new java.awt.Color(153, 153, 153));
 
-        jPasswordField_PasswordConfirmation.setBackground(new java.awt.Color(153, 153, 153));
-
-        jButton_Cancel_Reg.setText("cancel");
-        jButton_Cancel_Reg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel3.setBackground(new java.awt.Color(137, 196, 244));
 
         jButton_Registrate_Reg.setBackground(new java.awt.Color(0, 204, 51));
         jButton_Registrate_Reg.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton_Registrate_Reg.setText("registrate");
         jButton_Registrate_Reg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton_Registrate_Reg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Registrate_RegActionPerformed(evt);
+            }
+        });
+
+        jButton_Cancel_Reg.setText("cancel");
+        jButton_Cancel_Reg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabelChangeToLogIn.setText("click here to log in");
         jLabelChangeToLogIn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -167,12 +170,37 @@ public class Registration extends javax.swing.JFrame {
             }
         });
 
-        jPasswordField1.setBackground(new java.awt.Color(153, 153, 153));
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap(221, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jButton_Cancel_Reg)
+                        .addGap(41, 41, 41)
+                        .addComponent(jButton_Registrate_Reg)
+                        .addGap(27, 27, 27))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabelChangeToLogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(55, 55, 55))))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton_Registrate_Reg, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton_Cancel_Reg, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelChangeToLogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        jTextField1.setBackground(new java.awt.Color(153, 153, 153));
+
+        jTextField2.setBackground(new java.awt.Color(153, 153, 153));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -190,22 +218,15 @@ public class Registration extends javax.swing.JFrame {
                     .addComponent(jLabel_EmailConfirmation_Reg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton_Cancel_Reg)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton_Registrate_Reg))
                     .addComponent(jTextField_Lastname, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
                     .addComponent(jTextField_Firstname, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jTextField_Username, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jTextField_Email, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPasswordField_EmailConfirmation, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPasswordField_PasswordConfirmation, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPasswordField1))
+                    .addComponent(jTextField2)
+                    .addComponent(jTextField1))
                 .addGap(25, 25, 25))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(212, Short.MAX_VALUE)
-                .addComponent(jLabelChangeToLogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,22 +255,15 @@ public class Registration extends javax.swing.JFrame {
                     .addComponent(jLabel_EmailConfirmation_Reg, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPasswordField_EmailConfirmation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(11, 11, 11)
-                        .addComponent(jPasswordField_PasswordConfirmation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton_Cancel_Reg, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton_Registrate_Reg))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabelChangeToLogIn, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel_Password_Reg, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel_PasswordConfirmation_Reg, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_Password_Reg, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel_PasswordConfirmation_Reg, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -264,7 +278,7 @@ public class Registration extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -293,9 +307,16 @@ public class Registration extends javax.swing.JFrame {
         this.setState(JFrame.ICONIFIED);  // minimize the Registration screen
     }//GEN-LAST:event_jLabel_smallWindow_RegMouseClicked
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void jButton_Registrate_RegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Registrate_RegActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+        String firstname = user_firstname.getText();
+        String lastname = user_lastname.getText();
+        String username = user_username.getText();
+        String email = user_email.getText();
+        String password = user_password.getText();
+        
+        User new_Registration = new(firstname, lastname, username, email, password);
+    }//GEN-LAST:event_jButton_Registrate_RegActionPerformed
 
     /**
      * @param args the command line arguments
@@ -348,9 +369,10 @@ public class Registration extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_smallWindow_Reg;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPasswordField jPasswordField_EmailConfirmation;
-    private javax.swing.JPasswordField jPasswordField_PasswordConfirmation;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField_Email;
     private javax.swing.JTextField jTextField_Firstname;
     private javax.swing.JTextField jTextField_Lastname;
