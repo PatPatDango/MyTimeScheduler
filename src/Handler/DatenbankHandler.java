@@ -40,4 +40,18 @@ public class DatenbankHandler {
     }
     return false;
     } 
+    
+    public boolean checkifEmailExists (String email)throws SQLException{
+        String sql = "Select * FROM _USER where email = ?  AND DELETED = 0 ";
+        ResultSet rs2 = null;
+        con = getConnection();
+        st = con.prepareStatement(sql);
+        st.setString(3, email);
+        rs2= st.executeQuery(); //Returns one ResultSet object
+        
+        if(rs2.next()){
+            return true;
+        }
+        return false;
+    }
 }

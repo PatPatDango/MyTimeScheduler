@@ -6,6 +6,8 @@
 package Forms;
 import Classes.User;
 import Exceptions.User;
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
 
 import javax.swing.JFrame;
 
@@ -15,6 +17,8 @@ import javax.swing.JFrame;
  */
 public class Registration extends javax.swing.JFrame {
 
+    Connection con = null;
+    PreparedStatement pst = null;
     
     /**
      * Creates new form Registration

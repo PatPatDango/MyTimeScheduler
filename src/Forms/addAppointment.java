@@ -83,6 +83,7 @@ public class addAppointment extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(137, 196, 244));
 
         event_cancel.setText("cancel");
+        event_cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         event_cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 event_cancelActionPerformed(evt);
@@ -90,6 +91,7 @@ public class addAppointment extends javax.swing.JFrame {
         });
 
         add_button.setText("+ add");
+        add_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         add_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 add_buttonActionPerformed(evt);
@@ -146,8 +148,10 @@ public class addAppointment extends javax.swing.JFrame {
         jLabel9.setText("Reminder :");
 
         event_priority.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "low", "medium", "high" }));
+        event_priority.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         event_reminder.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "10 minutes", "1 hour", "3 days", "1 week" }));
+        event_reminder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

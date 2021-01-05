@@ -57,6 +57,7 @@ public class Account extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(137, 196, 244));
 
         jButton3.setText("back");
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -123,6 +124,7 @@ public class Account extends javax.swing.JFrame {
         jLabel9.setText("new password :");
 
         jButton1.setText("set");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -136,6 +138,7 @@ public class Account extends javax.swing.JFrame {
         });
 
         jButton2.setText("set");
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
