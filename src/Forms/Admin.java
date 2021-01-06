@@ -134,6 +134,11 @@ public class Admin extends javax.swing.JFrame {
 
         jButton_ModifyAccount_Ad.setText("Modify account information");
         jButton_ModifyAccount_Ad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton_ModifyAccount_Ad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_ModifyAccount_AdActionPerformed(evt);
+            }
+        });
 
         jButton_deleteAccount_Ad.setText("delete account");
         jButton_deleteAccount_Ad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -159,6 +164,11 @@ public class Admin extends javax.swing.JFrame {
 
         jButton1.setText("show TimeScheduler");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -319,6 +329,16 @@ public class Admin extends javax.swing.JFrame {
     private void jButton_deleteAccount_AdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_deleteAccount_AdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton_deleteAccount_AdActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        new Calendar().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton_ModifyAccount_AdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ModifyAccount_AdActionPerformed
+        // TODO add your handling code here:
+        new Account().setVisible(true);
+    }//GEN-LAST:event_jButton_ModifyAccount_AdActionPerformed
 
     /**
      * @param args the command line arguments

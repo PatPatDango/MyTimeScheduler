@@ -164,6 +164,11 @@ public class Registration extends javax.swing.JFrame {
 
         jButton_Cancel_Reg.setText("cancel");
         jButton_Cancel_Reg.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton_Cancel_Reg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Cancel_RegActionPerformed(evt);
+            }
+        });
 
         jLabelChangeToLogIn.setText("click here to log in");
         jLabelChangeToLogIn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -321,7 +326,15 @@ public class Registration extends javax.swing.JFrame {
         String password = user_password.getText();
         
         User new_Registration = new(firstname, lastname, username, email, password);
+        
+        //Go to Calendar
+        new Calendar().setVisible(true);
     }//GEN-LAST:event_jButton_Registrate_RegActionPerformed
+
+    private void jButton_Cancel_RegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Cancel_RegActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jButton_Cancel_RegActionPerformed
 
     public boolean verifyFields()
     {

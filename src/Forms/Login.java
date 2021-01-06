@@ -150,6 +150,11 @@ public class Login extends javax.swing.JFrame {
                 jButton_Login_LogMouseExited(evt);
             }
         });
+        jButton_Login_Log.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Login_LogActionPerformed(evt);
+            }
+        });
 
         jLabel_LogToRegistration_Log.setText("click here to create a new account");
         jLabel_LogToRegistration_Log.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -382,6 +387,11 @@ public class Login extends javax.swing.JFrame {
         rg.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.dispose();
     }//GEN-LAST:event_jButton_Login_LogMouseClicked
+
+    private void jButton_Login_LogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Login_LogActionPerformed
+        // TODO add your handling code here:
+        new Calendar().setVisible(true);
+    }//GEN-LAST:event_jButton_Login_LogActionPerformed
 
     /**
      * @param args the command line arguments

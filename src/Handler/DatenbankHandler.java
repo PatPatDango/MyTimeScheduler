@@ -22,7 +22,7 @@ public class DatenbankHandler {
         Connection con = null;
         
         con = DriverManager.getConnection(URL,USERNAME, PASSWORD);
-        System.out.println("Verbindung ergoldreich");
+        System.out.println("Verbindung erfolgreich");
         return con;
     }
     
