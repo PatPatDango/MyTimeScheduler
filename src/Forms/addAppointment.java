@@ -18,6 +18,7 @@ public class addAppointment extends javax.swing.JFrame {
      */
     public addAppointment() {
         initComponents();
+        
     }
 
     /**
@@ -259,7 +260,7 @@ public class addAppointment extends javax.swing.JFrame {
     String priority= event_priority.getSelectedItem().toString();
     String reminder = event_reminder.getSelectedItem().toString();
     
-    //Appointment new_event = new (name, date ,location, duration, participants, priority, reminder); 
+    Appointment new_event = new Appointment(name, date ,location, duration, participants, priority, reminder); 
     }//GEN-LAST:event_add_buttonActionPerformed
 
     private void event_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_event_cancelActionPerformed
