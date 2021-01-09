@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Classes;
+import Classes.User;
 
 /**
  *
@@ -20,5 +21,6 @@ public class Registration {
     //if not -> pop up Notivication
     
 // create an new Object from Class User 
+        
     
 }
