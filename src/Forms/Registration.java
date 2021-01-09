@@ -5,10 +5,11 @@
  */
 package Forms;
 import Classes.User;
-import com.mysql.jdbc.Connection;
+import Handler.DatenbankHandler;
 import com.mysql.jdbc.PreparedStatement;
-import java.awt.Color;
-import javax.swing.BorderFactory;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 //import com.sun.jdi.connect.spi.Connection;
 
 import javax.swing.JFrame;
@@ -21,8 +22,6 @@ import javax.swing.JOptionPane;
  */
 public class Registration extends javax.swing.JFrame {
 
-    //Connection con = null;
-    PreparedStatement pst = null;
     
     /**
      * Creates new form Registration
@@ -316,12 +315,48 @@ public class Registration extends javax.swing.JFrame {
         String lastname = user_lastname.getText();
         String username = user_username.getText();
         String email = user_email.getText();
-        String password = user_password.getText();
+        //String emailconfirmation=user_emailconfirmation.getText();
+        String password=String.valueOf(user_password.getPassword());
+        //String passwordconfirmation=String.valueOf(user_passwordconfirmation.getPassword());
+        
+        if(firstname.equals("")||lastname.equals("")||username.equals("")||email.equals("")/*||emailconfirmation.trim().equals("")||password.equals("")||passwordconfirmation.equals("")*/)
+        {
+            JOptionPane.showMessageDialog(null, "One or more fields are empty.");
+        }
+        /*else if(!password.equals(passwordconfirmation))
+        {
+            JOptionPane.showMessageDialog(null, "Passwords doesn't match","Confirm password",2);
+        }
+        else if(!email.equals(emailconfirmation))
+        {
+            JOptionPane.showMessageDialog(null, "E-mails doesn't match","Confirm e-mail",2);
+        }*/
+        else{
+        
+        PreparedStatement ps;
+        String query="INSERT INTO 'user' (`u_firstName`,`u_lastName`,`u_username`,`u_email`,`u_password`) VALUES (?,?,?,?,?)";
+        
+        try {
+            ps = (PreparedStatement) DatenbankHandler.getConnection().prepareStatement(query);
+            ps.setString(1, firstname);
+            ps.setString(2, lastname);
+            ps.setString(3, username);
+            ps.setString(4, email);
+            ps.setString(5, password);
+            
+            if(ps.executeUpdate()>0)
+            {
+                JOptionPane.showMessageDialog(null,"New User added");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
         
         User Registrate = new User(firstname, lastname, username, email, password);
         
         //Go to Calendar
-        new Calendar().setVisible(true);
+        //new Calendar().setVisible(true);
     }//GEN-LAST:event_jButton_Registrate_RegActionPerformed
 
     private void jButton_Cancel_RegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Cancel_RegActionPerformed
@@ -329,37 +364,6 @@ public class Registration extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jButton_Cancel_RegActionPerformed
 
-    public boolean verifyFields()
-    {
-        String firstname=user_firstname.getText();
-        String lastname=user_lastname.getText();
-        String username=user_username.getText();
-        String email=user_email.getText();
-        String emailconfirmation=user_emailconfirmation.getText();
-        String password=String.valueOf(user_password.getPassword());
-        String passwordconfirmation=String.valueOf(user_passwordconfirmation.getPassword());
-        
-        //check empty fields
-        if(firstname.trim().equals("")||lastname.trim().equals("")||username.trim().equals("")||email.trim().equals("")||emailconfirmation.trim().equals("")||password.trim().equals("")||passwordconfirmation.trim().equals(""))
-        {
-            JOptionPane.showMessageDialog(null, "One or more fields are empty.");
-            return false;
-        }
-        else if(password.equals(passwordconfirmation))
-        {
-            JOptionPane.showMessageDialog(null, "Passwords doesn't match","Confirm password",2);
-            return false;
-        }
-        else if(email.equals(emailconfirmation))
-        {
-            JOptionPane.showMessageDialog(null, "E-mails doesn't match","Confirm e-mail",2);
-            return false;
-        }
-        else
-        {
-            return true;
-        }
-    }
     /**
      * @param args the command line arguments
      */
