@@ -61,14 +61,16 @@ public class DatenbankHandler {
     
     public int InsertnewAppointment(Appointment new_event){
     int insertSuccessfull= 1;
-    String sql= "INSERT INTO appointment (a_eventName, a_Date, a_duration, a_eventTime, a_location, a_priority, a_reminder) VALUES (?,?,?,?,?;?;?)";
+    String sql= "INSERT INTO appointment (a_eventName, a_Date, a_eventTime,a_duration, a_location, a_priority, a_reminder) VALUES (?,?,?,?,?;?;?)";
     try (Connection con = getConnection();PreparedStatement ps = con.prepareStatement(sql)){
-        ps.setString(1, new_event.getName());
-        ps.setLocalDate(2, new_event.getDate());
-        ps.setLocalTime(3, new_event.getTime());
-        ps.setInt(4, new_event.getDuration());
-        ps.setString(5, Lo)
-        ps.set 
+        ps.setString(1, new_event.getName());           //name
+        ps.setTimestamp(2, new_event.getDate());        //Date --> invert to Sql date
+        ps.setLocalTime(3, new_event.getTime());        //time --> invert so sql time 
+        ps.setInt(4, new_event.getDuration());          //duration
+        ps.setString(5, new_event.getLocation());       //location
+        ps.setString(6, new_event.getParticipants());   //participants
+        ps.setString(7, new_event.getPriority());       //priority
+        ps.setString(8, new_event.getReminder());       //reminder
         insertSuccessfull = ps.executeUpdate();   
     }   catch (SQLException ex) {
             Logger.getLogger(DatenbankHandler.class.getName()).log(Level.SEVERE, null, ex);
