@@ -390,7 +390,7 @@ ResultSet rs = null;
 
     private void jButton_Login_LogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Login_LogActionPerformed
         //check if Username and password are correct
-        conn = DatenbankHandler.getConnection();
+        Connection conn = DatenbankHandler.getConnection();
         String Sql = "Select * from login where username=? and password=?";
         try{
             pst = conn.prepareStatement(Sql);

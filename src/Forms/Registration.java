@@ -6,10 +6,11 @@
 package Forms;
 import Classes.User;
 import Handler.DatenbankHandler;
-import com.mysql.jdbc.PreparedStatement;
+//import con.mysql.jdbc.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.sql.*;
 //import com.sun.jdi.connect.spi.Connection;
 
 import javax.swing.JFrame;
