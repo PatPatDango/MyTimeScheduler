@@ -6,6 +6,8 @@
 package Handler;
 import java.sql.*;
 import Classes.*; 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -53,5 +55,25 @@ public class DatenbankHandler {
             return true;
         }
         return false;
+    }
+    
+    PreparedStatement ps;
+    
+    public int InsertnewAppointment(Appointment new_event){
+    int insertSuccessfull= 1;
+    String sql= "INSERT INTO appointment (a_eventName, a_Date, a_duration, a_eventTime, a_location, a_priority, a_reminder) VALUES (?,?,?,?,?;?;?)";
+    try (Connection con = getConnection();PreparedStatement ps = con.prepareStatement(sql)){
+        ps.set
+        ps.set 
+        ps.set
+        ps.set
+        ps.set
+        ps.set 
+        insertSuccessfull = ps.executeUpdate();   
+    }   catch (SQLException ex) {
+            Logger.getLogger(DatenbankHandler.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    System.out.println("Appointment successfully added");
+    return insertSuccessfull; 
     }
 }
