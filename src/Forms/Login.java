@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package Forms;
+import Handler.DatenbankHandler;
+import java.sql.*;
+import javax.swing.*;
+
 
 
 
@@ -19,7 +23,9 @@ import javax.swing.JFrame;
  * @author Julia
  */
 public class Login extends javax.swing.JFrame {
-    
+Connection conn = null;
+PreparedStatement pst = null;
+ResultSet rs = null;
 
     /**
      * Creates new form Login
@@ -383,8 +389,26 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_Login_LogMouseClicked
 
     private void jButton_Login_LogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Login_LogActionPerformed
-        // TODO add your handling code here:
-        new Calendar().setVisible(true);
+        //check if Username and password are correct
+        conn = DatenbankHandler.getConnection();
+        String Sql = "Select * from login where username=? and password=?";
+        try{
+            pst = conn.prepareStatement(Sql);
+            pst.setString(1,jLabel_Username_Log.getText());
+            pst.setString(2,jLabel_Password_Log.getText());
+            rs = pst.executeQuery();
+            if(rs.next()){
+                JOptionPane.showMessageDialog(null,"Welcome User");
+                Calendar calendar1 = new Calendar();
+                calendar1.setVisible(true);
+                                
+            }else{
+                JOptionPane.showMessageDialog(null,"Invalid Username or Password","Access denied",JOptionPane.ERROR_MESSAGE);
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        
     }//GEN-LAST:event_jButton_Login_LogActionPerformed
 
     private void jLabel_Exit_LogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_Exit_LogMouseClicked
