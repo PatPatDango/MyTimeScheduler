@@ -63,11 +63,11 @@ public class DatenbankHandler {
     int insertSuccessfull= 1;
     String sql= "INSERT INTO appointment (a_eventName, a_Date, a_duration, a_eventTime, a_location, a_priority, a_reminder) VALUES (?,?,?,?,?;?;?)";
     try (Connection con = getConnection();PreparedStatement ps = con.prepareStatement(sql)){
-        ps.set
-        ps.set 
-        ps.set
-        ps.set
-        ps.set
+        ps.setString(1, new_event.getName());
+        ps.setLocalDate(2, new_event.getDate());
+        ps.setLocalTime(3, new_event.getTime());
+        ps.setInt(4, new_event.getDuration());
+        ps.setString(5, Lo)
         ps.set 
         insertSuccessfull = ps.executeUpdate();   
     }   catch (SQLException ex) {

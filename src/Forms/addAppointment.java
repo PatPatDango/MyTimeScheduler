@@ -6,6 +6,7 @@
 package Forms;
 import Classes.Appointment;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 /**
  *
@@ -252,15 +253,16 @@ public class addAppointment extends javax.swing.JFrame {
 
     private void add_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_buttonActionPerformed
         // TODO add your handling code here:
-          String name = event_name.getText();
+    String name = event_name.getText();
     LocalDate date = LocalDate.parse(event_date.getText());
+    LocalTime time = LocalTime.parse(event_time.getText());
+    int duration = Integer.parseInt(event_duration.getText());
     String location = event_location.getText();
-    String duration = event_duration.getText();
     String participants = event_participants.getText();
     String priority= event_priority.getSelectedItem().toString();
     String reminder = event_reminder.getSelectedItem().toString();
     
-    Appointment new_event = new Appointment(name, date ,location, duration, participants, priority, reminder); 
+    Appointment new_event = new Appointment(name, date, time, duration,location, participants, priority, reminder); 
     }//GEN-LAST:event_add_buttonActionPerformed
 
     private void event_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_event_cancelActionPerformed

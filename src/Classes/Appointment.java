@@ -13,6 +13,7 @@ import Forms.addAppointment;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 
 
@@ -21,19 +22,21 @@ public class Appointment
 {
     private String name = null;
     private LocalDate date = null;
+    private LocalTime time = null; //!!!!!!!
+    private int duration = 0;
     private String location = null;
-    private String duration = null;
     private String participants = null;
     //private String attachementfiles;
     private String priority = null;
     private String reminder = null;
 
     //Konstructor 
-    public Appointment (String name, LocalDate date, String duration,  String Participants, String priority, String reminder ){
+    public Appointment (String name, LocalDate date,LocalTime time, int duration, String location, String Participants, String priority, String reminder ){
         this.setName(name);
         this.setDate(date);
-        this.setLocation(location);
+        this.setTime(time); 
         this.setDuration(duration);
+        this.setLocation(location);
         this.setParticipants(participants);
         this.setPriority(priority); 
         this.setReminder(reminder); 
@@ -48,8 +51,11 @@ public class Appointment
     public LocalDate getDate() {return date;}
     public void setDate(LocalDate _date) {date=_date;}
     
-    public String getDuration() {return duration;}
-    public void setDuration(String _duration) {duration=_duration;}
+    public LocalTime getTime() {return time;}
+    public void setTime(LocalTime _time) {time =_time;}
+    
+    public int getDuration() {return duration;}
+    public void setDuration(int _duration) {duration=_duration;}
     
     public String getLocation() {return location;}
     public void setLocation(String _location) {location=_location;}
@@ -65,6 +71,10 @@ public class Appointment
 
     public String getReminder() {return reminder;}
     public void setReminder(String _reminder) {reminder=_reminder;}
+
+    private void setDuration(String duration) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
     
 
