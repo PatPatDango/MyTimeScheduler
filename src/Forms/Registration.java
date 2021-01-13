@@ -16,6 +16,9 @@ import java.sql.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 
 /**
  *
@@ -29,7 +32,7 @@ public class Registration extends javax.swing.JFrame {
      */
     public Registration() {
         initComponents();
-        this.setLocationRelativeTo(null); // Registration screen is shown in the center
+        this.setLocationRelativeTo(null); // Registration screen is shown in the center yeah
         
              
     }
@@ -320,6 +323,27 @@ public class Registration extends javax.swing.JFrame {
         String password=String.valueOf(user_password.getPassword());
         //String passwordconfirmation=String.valueOf(user_passwordconfirmation.getPassword());
         
+        System.out.println(password);
+        
+        
+            
+        MessageDigest messagedigest = null; //Hash-Funktion Encryption
+        try {
+            messagedigest = MessageDigest.getInstance("SHA-512");
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        messagedigest.update(password.getBytes());
+        StringBuffer sb= new StringBuffer();
+        byte[] b = messagedigest.digest();
+        for(byte b1:b)
+        {
+            sb.append(Integer.toHexString(b1 & 0xff).toString());
+        }
+        
+        System.out.println(sb);
+        
+        
         if(firstname.equals("")||lastname.equals("")||username.equals("")||email.equals("")/*||emailconfirmation.trim().equals("")||password.equals("")||passwordconfirmation.equals("")*/)
         {
             JOptionPane.showMessageDialog(null, "One or more fields are empty.");
@@ -343,14 +367,14 @@ public class Registration extends javax.swing.JFrame {
             ps.setString(2, lastname);
             ps.setString(3, username);
             ps.setString(4, email);
-            ps.setString(5, password);
+            ps.setString(5, sb.toString());
             
             if(ps.executeUpdate()>0)
             {
                 JOptionPane.showMessageDialog(null,"New User added");
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
+            
         }
         }
         
