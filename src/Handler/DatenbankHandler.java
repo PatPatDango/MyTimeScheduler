@@ -59,7 +59,7 @@ public class DatenbankHandler {
     
     PreparedStatement ps;
     
-    public int InsertnewAppointment(Appointment new_event){
+/*    public int InsertnewAppointment(Appointment new_event){
     int insertSuccessfull= 1;
     String sql= "INSERT INTO appointment (a_eventName, a_Date, a_eventTime,a_duration, a_location, a_priority, a_reminder) VALUES (?,?,?,?,?;?;?)";
     try (Connection con = getConnection();PreparedStatement ps = con.prepareStatement(sql)){
@@ -78,7 +78,7 @@ public class DatenbankHandler {
     System.out.println("Appointment successfully added");
     return insertSuccessfull; 
     }
-    
+*/    
     String username = "pat"; 
     
     public void EditUser(String old_usermail, String new_usermail){
