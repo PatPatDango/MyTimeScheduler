@@ -338,7 +338,7 @@ public class Registration extends javax.swing.JFrame {
         byte[] b = messagedigest.digest();
         for(byte b1:b)
         {
-            sb.append(Integer.toHexString(b1 & 0xff).toString());
+            sb.append(Integer.toHexString(b1 & 0xff).toString());//yeah
         }
         
         System.out.println(sb);
