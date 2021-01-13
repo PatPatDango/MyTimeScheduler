@@ -78,4 +78,20 @@ public class DatenbankHandler {
     System.out.println("Appointment successfully added");
     return insertSuccessfull; 
     }
+    
+    String username = "pat"; 
+    
+    public void EditUser(String old_usermail, String new_usermail){
+        String sql ="Update user SET u_email = ? WHERE u_username = ? VALUES (?,?)"; 
+        try (Connection con = getConnection();PreparedStatement ps = con.prepareStatement(sql)){
+         system.out.println( ps.setString(1, new_usermail));
+        //     ps.executeUpdate();
+            ps.setString(2, username);
+        } catch (SQLException ex) {
+            Logger.getLogger(DatenbankHandler.class.getName()).log(Level.SEVERE, null, ex);
+            ps.executeUpdate();
+        }
+    }
 }
+
+
