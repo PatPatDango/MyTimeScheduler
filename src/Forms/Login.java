@@ -13,10 +13,15 @@ import javax.swing.*;
 
 import java.awt.Color;
 import static java.awt.Color.black;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import javax.swing.border.Border;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+
 
 /**
  *
@@ -389,19 +394,35 @@ ResultSet rs = null;
     }//GEN-LAST:event_jButton_Login_LogMouseClicked
 
     private void jButton_Login_LogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Login_LogActionPerformed
-        //check if Username and password are correct
+         //check if Username and password are correct
         Connection conn = DatenbankHandler.getConnection();
+        String password=String.valueOf(jPasswordField_Password_Log.getPassword());
+        MessageDigest messagedigest = null; //Hash-Funktion Encryption
+        try {
+            messagedigest = MessageDigest.getInstance("SHA-512");
+        } catch (NoSuchAlgorithmException ex) {
+            
+        }
+        messagedigest.update(password.getBytes());
+        StringBuffer sb= new StringBuffer();
+        byte[] b = messagedigest.digest();
+        for(byte b1:b)
+        {
+            sb.append(Integer.toHexString(b1 & 0xff).toString());//yeah
+        }
+
+        System.out.println(sb);
         String Sql = "Select * from login where username=? and password=?";
         try{
             pst = conn.prepareStatement(Sql);
             pst.setString(1,jLabel_Username_Log.getText());
-            pst.setString(2,jLabel_Password_Log.getText());
+             pst.setString(5, sb.toString());
             rs = pst.executeQuery();
             if(rs.next()){
                 JOptionPane.showMessageDialog(null,"Welcome User");
                 Calendar calendar1 = new Calendar();
                 calendar1.setVisible(true);
-                                
+
             }else{
                 JOptionPane.showMessageDialog(null,"Invalid Username or Password","Access denied",JOptionPane.ERROR_MESSAGE);
             }
