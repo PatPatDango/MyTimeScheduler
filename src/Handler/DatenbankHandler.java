@@ -89,9 +89,9 @@ public class DatenbankHandler {
             
             Connection con = getConnection();
             PreparedStatement ps = con.prepareStatement(sql);
-    //        System.out.println(ps.setString(1, new_usermail));
-            //     ps.executeUpdate();
+            System.out.println(ps.setString(1, new_usermail));
             ps.setString(2, username);
+            ps.executeUpdate();
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(DatenbankHandler.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
