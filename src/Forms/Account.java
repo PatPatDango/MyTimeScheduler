@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package Forms;
+import Handler.DatenbankHandler;
+
 
 /**
  *
@@ -238,11 +240,11 @@ public class Account extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-         String old_mail = old_email.getText();
+         String oldy = old_email.getText();
         String new_mail = new_email.getText();
         
         DatenbankHandler dbHandler = new DatenbankHandler();
-        DatenbankHandler.EditUser(old_mail, new_mail);
+        dbHandler.EditUser(oldy , new_mail);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
