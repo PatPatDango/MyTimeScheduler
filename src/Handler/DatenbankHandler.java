@@ -18,6 +18,20 @@ public class DatenbankHandler {
     private static Connection con;
     private static PreparedStatement st;
 
+    
+//   public static Connection getConnection()/*throws SQLException*/ {
+//        Connection con = null;
+//        try {
+//            Class.forName("foo.bah.Driver");
+//            con = DriverManager.getConnection("jdc:mysql://127.0.0.1:3306/MyTimeScheduler", "Admin", "admin");
+//            System.out.println("Verbindung erfolgreich");
+//        } catch (Exception ex) {
+//            System.out.println(ex.getMessage());
+//        }
+//        return con;
+//    } 
+        
+    //Patricias Connector (nicht löschen oder bearbeiten, ich arbeite dran ) 
     public static Connection getConnection()/*throws SQLException*/ {
         Connection con = null;
         try {
@@ -29,6 +43,9 @@ public class DatenbankHandler {
         }
         return con;
     }
+
+        
+    
 
     public boolean checkifUserExists(String username, String password) throws SQLException {
         String sql = "Select * FROM _USER where username = ? AND password = ? AND DELETED = 0 ";
@@ -89,7 +106,7 @@ public class DatenbankHandler {
             
             Connection con = getConnection();
             PreparedStatement ps = con.prepareStatement(sql);
-            System.out.println(ps.setString(1, new_usermail));
+    //        System.out.println(ps.setString(1, new_usermail));
             ps.setString(2, username);
             ps.executeUpdate();
         } catch (SQLException ex) {
