@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Classes;
+
 import Forms.Calendar;
 /**
  *
@@ -16,7 +17,6 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
     Calendar Calendar = new Calendar();
     Calendar.setVisible(true);
         
