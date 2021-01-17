@@ -132,4 +132,16 @@ public class DatenbankHandler {
         }
         } 
 
+        public void EditPasswort(String username, String new_passwort, String old_passwort) {
+        try { String sql = "Update user SET u_email = ? WHERE u_username = ? VALUES (?,?)";
+            
+            Connection con = getConnection();
+            PreparedStatement ps = con.prepareStatement(sql);
+    //        System.out.println(ps.setString(1, new_usermail));
+            ps.setString(2, username);
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(DatenbankHandler.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        } 
 }
