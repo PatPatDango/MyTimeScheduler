@@ -238,7 +238,7 @@ public class Account extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here:Change user-email !
         
          String oldy = old_email.getText();
         String new_mail = new_email.getText();
@@ -249,7 +249,15 @@ public class Account extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here: changePasswort
+        
+        String old_one  = old_password.getText();
+        String new_one = new_password.getText();
+        String username = "pat";
+        
+        DatenbankHandler dbHandler = new DatenbankHandler();
+        dbHandler.EditPasswort(username , new_one, old_one );
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void new_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_new_emailActionPerformed
