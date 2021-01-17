@@ -329,7 +329,7 @@ public class Registration extends javax.swing.JFrame {
             
         MessageDigest messagedigest = null; //Hash-Funktion Encryption
         try {
-            messagedigest = MessageDigest.getInstance("SHA-512");
+            messagedigest = MessageDigest.getInstance("MD5");
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -338,7 +338,7 @@ public class Registration extends javax.swing.JFrame {
         byte[] b = messagedigest.digest();
         for(byte b1:b)
         {
-            sb.append(Integer.toHexString(b1 & 0xff).toString());//yeah
+            sb.append(Integer.toHexString(b1 & 0xff).toString());
         }
         
         System.out.println(sb);
@@ -359,7 +359,7 @@ public class Registration extends javax.swing.JFrame {
         else{
         
         PreparedStatement ps;
-        String query="INSERT INTO 'user' (`u_firstName`,`u_lastName`,`u_username`,`u_email`,`u_password`) VALUES (?,?,?,?,?)";
+        String query="INSERT INTO scheduler_users (`u_firstName`,`u_lastName`,`u_username`,`u_email`,`u_password`) VALUES (?,?,?,?,?)";
         
         try {
             ps = (PreparedStatement) DatenbankHandler.getConnection().prepareStatement(query);

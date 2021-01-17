@@ -5,9 +5,11 @@
  */
 package Handler;
 
+import java.awt.HeadlessException;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -32,7 +34,7 @@ public class DatenbankHandler {
 //    } 
         
     //Patricias Connector (nicht löschen oder bearbeiten, ich arbeite dran ) 
-    public static Connection getConnection()/*throws SQLException*/ {
+    /*public static Connection getConnection()/*throws SQLException {
         Connection con = null;
         try {
             Class.forName("foo.bah.Driver");
@@ -42,12 +44,28 @@ public class DatenbankHandler {
             System.out.println(ex.getMessage());
         }
         return con;
+    }*/
+    
+    public static Connection getConnection() //Camillas Connector
+    {
+        try
+        {
+        Class.forName("com.mysql.jdbc.Driver");
+        //Class.forName("foo.bah.Driver");
+        con=DriverManager.getConnection("jdc:mysql://127.0.0.1:3306/MyTimeScheduler", "Admin", "admin");
+        JOptionPane.showMessageDialog(null, "Connection Successfull!");
+        return con;
+        }
+        catch(HeadlessException | ClassNotFoundException | SQLException e)
+        {
+            JOptionPane.showMessageDialog(null,"Error in DatenbankHandler getConnection method "+e);
+            
+        }
+        return con;
     }
-
-        
     
 
-    public boolean checkifUserExists(String username, String password) throws SQLException {
+    /*public boolean checkifUserExists(String username, String password) throws SQLException {
         String sql = "Select * FROM _USER where username = ? AND password = ? AND DELETED = 0 ";
         ResultSet rs = null;
         con = getConnection();
@@ -74,9 +92,9 @@ public class DatenbankHandler {
             return true;
         }
         return false;
-    }
+    }*/
 
-    PreparedStatement ps;
+    //PreparedStatement ps;
 
     /*    public int InsertnewAppointment(Appointment new_event){
     int insertSuccessfull= 1;
@@ -98,9 +116,9 @@ public class DatenbankHandler {
     return insertSuccessfull; 
     }
      */
-    String username = "pat";
+    //String username = "pat";
 
-    public void EditUser(String old_usermail, String new_usermail) {
+    /*public void EditUser(String old_usermail, String new_usermail) {
         try {
             String sql = "Update user SET u_email = ? WHERE u_username = ? VALUES (?,?)";
             
@@ -112,6 +130,6 @@ public class DatenbankHandler {
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(DatenbankHandler.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        }     
+        }*/ 
 
 }
