@@ -3,18 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Classes;
+package Handler;
 
 /**
  *
  * @author patricia
  */
-public class UserHandler {
-    
-    public void Check (String password){
-    
-        
-    
-    }
+public class AppointmentHandler {
     
 }
