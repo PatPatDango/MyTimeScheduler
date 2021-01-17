@@ -13,4 +13,9 @@ public class encryption {
     
     //hier bitte die encryption funktion schreiben 
     
+    public String encryption (String password){
+    
+    return password;    
+    }
+    
 }
