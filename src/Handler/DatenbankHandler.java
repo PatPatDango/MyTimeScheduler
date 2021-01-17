@@ -65,7 +65,7 @@ public class DatenbankHandler {
     }
     
 
-    /*public boolean checkifUserExists(String username, String password) throws SQLException {
+    public boolean checkifUserExists(String username, String password) throws SQLException {
         String sql = "Select * FROM _USER where username = ? AND password = ? AND DELETED = 0 ";
         ResultSet rs = null;
         con = getConnection();
@@ -92,7 +92,7 @@ public class DatenbankHandler {
             return true;
         }
         return false;
-    }*/
+    }
 
     //PreparedStatement ps;
 

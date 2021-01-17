@@ -5,8 +5,11 @@
  */
 package Forms;
 import Classes.Appointment;
+import java.io.FileWriter;
+import java.io.Writer;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -262,7 +265,22 @@ public class addAppointment extends javax.swing.JFrame {
     String priority= event_priority.getSelectedItem().toString();
     String reminder = event_reminder.getSelectedItem().toString();
     
-    Appointment new_event = new Appointment(name, date, time, duration,location, participants, priority, reminder); 
+    Appointment new_event = new Appointment(name, date, time, duration,location, participants, priority, reminder);
+    
+    try
+    {
+        FileWriter FileWriter = new FileWriter("weeklySchedule.txt",true);
+        Writer.write("This weeks schedule:");
+        Writer.write(System.getProperty("line.separator"));
+        Writer.close();
+        JOptionPane.showMessageDialog(null,"Success");
+        setVisible(false);
+        new InsertData().setVisible(true);
+    }
+    catch(Exception e)
+    {
+        JOptionPane.showMessageDialog(null,"Error");
+    }
     }//GEN-LAST:event_add_buttonActionPerformed
 
     private void event_cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_event_cancelActionPerformed
