@@ -19,8 +19,12 @@ public class DatenbankHandler {
 
     private static Connection con;
     private static PreparedStatement st;
-
     
+    public DatenbankHandler(){
+        con= getConnection();
+    }
+    
+
 //   public static Connection getConnection()/*throws SQLException*/ {
 //        Connection con = null;
 //        try {
@@ -32,38 +36,35 @@ public class DatenbankHandler {
 //        }
 //        return con;
 //    } 
-        
     //Patricias Connector (nicht löschen oder bearbeiten, ich arbeite dran ) 
-    /*public static Connection getConnection()/*throws SQLException {
+    public static Connection getConnection() {
+        final String USERNAME = "Admin";
+        final String PASSWORD = "admin";
+        String URL = "jdbc:mysql://localhost:3306/MyTimeScheduler?zeroDateTimeBehavior=convertToNull&serverTimezone=Europe/Berlin";
         Connection con = null;
         try {
-            Class.forName("foo.bah.Driver");
-            con = DriverManager.getConnection("jdc:mysql://127.0.0.1:3306/MyTimeScheduler", "Admin", "admin");
-            System.out.println("Verbindung erfolgreich");
-        } catch (Exception ex) {
+            con = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            return con;
+        } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-        return con;
-    }*/
-    
-    public static Connection getConnection() //Camillas Connector
-    {
-        try
-        {
-        Class.forName("com.mysql.jdbc.Driver");
-        //Class.forName("foo.bah.Driver");
-        con=DriverManager.getConnection("jdc:mysql://127.0.0.1:3306/MyTimeScheduler", "Admin", "admin");
-        JOptionPane.showMessageDialog(null, "Connection Successfull!");
-        return con;
-        }
-        catch(HeadlessException | ClassNotFoundException | SQLException e)
-        {
-            JOptionPane.showMessageDialog(null,"Error in DatenbankHandler getConnection method "+e);
-            
-        }
-        return con;
+        return null;
     }
     
+//    public static Connection getConnection() //Camillas Connector
+//    {
+//        try {
+//            Class.forName("com.mysql.jdbc.Driver");
+//            //Class.forName("foo.bah.Driver");
+//            con = DriverManager.getConnection("jdc:mysql://127.0.0.1:3306/MyTimeScheduler", "Admin", "admin");
+//            JOptionPane.showMessageDialog(null, "Connection Successfull!");
+//            return con;
+//        } catch (HeadlessException | ClassNotFoundException | SQLException e) {
+//            JOptionPane.showMessageDialog(null, "Error in DatenbankHandler getConnection method " + e);
+//
+//        }
+//        return con;
+//    }
 
     public boolean checkifUserExists(String username, String password) throws SQLException {
         String sql = "Select * FROM _USER where username = ? AND password = ? AND DELETED = 0 ";
@@ -116,32 +117,50 @@ public class DatenbankHandler {
     return insertSuccessfull; 
     }
      */
-    
-
     public void EditUser(String username, String new_usermail) {
         try {
             String sql = "Update user SET u_email = ? WHERE u_username = ? VALUES (?,?)";
-            
-            Connection con = getConnection();
-            PreparedStatement ps = con.prepareStatement(sql);
-    //        System.out.println(ps.setString(1, new_usermail));
-            ps.setString(2, username);
-            ps.executeUpdate();
-        } catch (SQLException ex) {
-            java.util.logging.Logger.getLogger(DatenbankHandler.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        } 
 
-        public void EditPasswort(String username, String new_passwort, String old_passwort) {
-        try { String sql = "Update user SET u_email = ? WHERE u_username = ? VALUES (?,?)";
-            
             Connection con = getConnection();
             PreparedStatement ps = con.prepareStatement(sql);
-    //        System.out.println(ps.setString(1, new_usermail));
+            ps.setString(1, new_usermail);
+            ps.setString(2, username);
+            System.out.println(ps.toString());
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(DatenbankHandler.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+    }
+
+    public void EditPasswort(String username, String new_passwort, String old_passwort) {
+        // passwort aus der Datenbank rauslesen
+        String getOldPassword = GetOldPassword(username);
+        String updatepasswort = "Update user SET u_passwort = ? WHERE u_username = ?;   ";
+        //hier old_passowort verschlüsseln mit funktion die fehlt XD 
+        // hier new_passwort verschlüsseln
+        if (getOldPassword.equals(old_passwort))
+        try (PreparedStatement ps = con.prepareStatement(updatepasswort)){
+            ps.setString(1, new_passwort);
             ps.setString(2, username);
             ps.executeUpdate();
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(DatenbankHandler.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        } 
+    }
+
+    private String GetOldPassword(String u_username) {
+        String getoldPassword = "SELECT u_password From User WHERE u_username = ?;";
+        String oldPassword = "";
+        try (PreparedStatement ps = con.prepareStatement(u_username)) {
+            ps.setString(1, u_username);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    oldPassword = rs.getString("u_password");
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("getoldPasswort : " + e.getMessage());
+        }
+        return oldPassword;
+    }
 }
