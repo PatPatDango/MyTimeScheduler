@@ -242,9 +242,10 @@ public class Account extends javax.swing.JFrame {
         
          String oldy = old_email.getText();
         String new_mail = new_email.getText();
+        String username = "pat";
         
         DatenbankHandler dbHandler = new DatenbankHandler();
-        dbHandler.EditUser(oldy , new_mail);
+        dbHandler.EditUser(username , new_mail);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

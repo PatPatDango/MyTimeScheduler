@@ -116,9 +116,9 @@ public class DatenbankHandler {
     return insertSuccessfull; 
     }
      */
-    //String username = "pat";
+    
 
-    /*public void EditUser(String old_usermail, String new_usermail) {
+    public void EditUser(String username, String new_usermail) {
         try {
             String sql = "Update user SET u_email = ? WHERE u_username = ? VALUES (?,?)";
             
@@ -130,6 +130,6 @@ public class DatenbankHandler {
         } catch (SQLException ex) {
             java.util.logging.Logger.getLogger(DatenbankHandler.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        }*/ 
+        } 
 
 }
