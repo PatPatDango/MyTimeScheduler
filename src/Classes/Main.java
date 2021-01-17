@@ -17,8 +17,8 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-    Calendar Calendar = new Calendar();
-    Calendar.setVisible(true);
+    Calendartime_2 Calendartime_2 = new Calendartime_2();
+    Calendartime_2.setVisible(true);
         
     
     }
