@@ -267,6 +267,8 @@ public class addAppointment extends javax.swing.JFrame {
     
     Appointment new_event = new Appointment(name, date, time, duration,location, participants, priority, reminder);
     
+    
+    //warum ist hier der file writer ? 
     try
     {
         FileWriter writer = new FileWriter("weeklySchedule.txt",true);
