@@ -269,13 +269,26 @@ public class addAppointment extends javax.swing.JFrame {
     
     try
     {
-        FileWriter FileWriter = new FileWriter("weeklySchedule.txt",true);
-        Writer.write("This weeks schedule:");
-        Writer.write(System.getProperty("line.separator"));
-        Writer.close();
+        FileWriter writer = new FileWriter("weeklySchedule.txt",true);
+        writer.write("This weeks schedule:");
+        writer.write(System.getProperty("line.separator"));
+        writer.write("Event Name: "+event_name);
+        writer.write(System.getProperty("line.separator"));
+        writer.write("Date: "+event_date);
+        writer.write(System.getProperty("line.separator"));
+        writer.write("Time: "+event_time);
+        writer.write(System.getProperty("line.separator"));
+        writer.write("Duration: "+event_duration);
+        writer.write(System.getProperty("line.separator"));
+        writer.write("Location: "+event_location);
+        writer.write(System.getProperty("line.separator"));
+        writer.write("Participants"+event_participants);
+        writer.write(System.getProperty("line.separator"));
+        writer.write("Priority: "+event_priority);
+        writer.write(System.getProperty("line.separator"));
+        writer.write("Reminder: "+event_reminder);
+        writer.close();
         JOptionPane.showMessageDialog(null,"Success");
-        setVisible(false);
-        new InsertData().setVisible(true);
     }
     catch(Exception e)
     {
