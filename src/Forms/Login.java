@@ -412,7 +412,7 @@ ResultSet rs = null;
         }
 
         System.out.println(sb);
-        String Sql = "Select * from login where username=? and password=?";
+        String Sql = "Select * from user where username=? and password=?";
         try{
             pst = conn.prepareStatement(Sql);
             pst.setString(1,jLabel_Username_Log.getText());

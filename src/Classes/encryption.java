@@ -5,6 +5,11 @@
  */
 package Classes;
 
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 /**
  *
  * @author patricia
@@ -14,7 +19,22 @@ public class encryption {
     //hier bitte die encryption funktion schreiben 
     
     public String encryption (String password){
-    
+     MessageDigest messagedigest = null; //Hash-Funktion Encryption
+        try {
+            messagedigest = MessageDigest.getInstance("MD5");
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        messagedigest.update(password.getBytes());
+        StringBuffer sb= new StringBuffer();
+        byte[] b = messagedigest.digest();
+        for(byte b1:b)
+        {
+            sb.append(Integer.toHexString(b1 & 0xff).toString());
+        }
+        
+        System.out.println(sb);
+        
     return password;    
     }
     
